@@ -3,7 +3,7 @@
     "type": "phpbb-extension",
     "description": "Display Only the First Post to specified groups",
     "homepage": "",
-    "version": "1.0.0-rc",
+    "version": "1.0.0",
     "time": "2022-08-16",
     "license": "GPL-2.0-only",
     "authors": [
