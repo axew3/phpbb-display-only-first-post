@@ -11,11 +11,11 @@ Then go to "ACP" > "Extensions" > "Display Only First Post" and setup required v
 ## I want to display custom content!
 Look into file
 
-   /ext/w3all/displayonlyfirstpost/language/en (or your active language)/common.php
+     /ext/w3all/displayonlyfirstpost/language/en (or your active language)/common.php
    
 then change this line
 
-   'DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT'   => '<b>Please register to see this content!</b>',
+     'DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT'   => '<b>Please register to see this content!</b>',
 
 
 ## License
