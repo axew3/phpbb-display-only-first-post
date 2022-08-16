@@ -1,5 +1,5 @@
 # phpBB - Display Only First Post Extension
-#### Display Only the First Post to specified groups, or display Only the First Post to specified groups and replace replies post's content with custom content
+##### Display Only the First Post to specified groups, or display Only the First Post to specified groups and replace replies post's content with custom content
 
 ## Installation
 
