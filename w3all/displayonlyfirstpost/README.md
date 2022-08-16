@@ -9,7 +9,7 @@ Go to "ACP" > "Customise" > "Extensions" and enable the "Display Only First Post
 Then go to "ACP" > "Extensions" > "Display Only First Post" and setup required values.
 
 
-## I want to display custom content!
+### I want to display custom content in place of default text!
 Look into file
 
      /ext/w3all/displayonlyfirstpost/language/en (or your active language)/common.php
