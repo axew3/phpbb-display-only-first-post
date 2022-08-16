@@ -1,4 +1,4 @@
-# Display Only First Post
+# phpBB - Display Only First Post Extension
 
 ## Installation
 
