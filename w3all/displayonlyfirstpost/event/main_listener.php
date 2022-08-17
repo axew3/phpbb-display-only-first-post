@@ -82,10 +82,8 @@ class main_listener implements EventSubscriberInterface
        // if the user is deactivated, or belong to one of the groups and the specified forum result to be on list, or the forums ids settings contains the word 'all' (all forums)
        if ( $this->user_type == 1 OR in_array($this->gid, $u_groups) && in_array($e['forum_id'], $forums_ids) OR in_array($this->gid, $u_groups) && in_array('all', $forums_ids) )
        {
-        $epl = $e['post_list'];
-         asort($epl); // so that if in descendant or ascendant order, the result will be the same: get the lower post ID
-        $e['post_list'] = $epl;
-        $vx = array_shift($e['post_list']);
+
+        $vx = $e['topic_data']['topic_first_post_id'];
         $tempRW = $e['rowset'];
 
       // Replacement mode:
