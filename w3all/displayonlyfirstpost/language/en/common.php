@@ -42,7 +42,7 @@ $lang = array_merge($lang, [
 
   //'DISPLAYONLYFIRSTPOST_EVENT'    => ' :: Displayonlyfirstpost Event :: ',
 
-  'DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT'   => '<b>Please register to see this content!</b>',
+  'DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT'   => '<p class="error">You can only view the first post into this topic.<br />Please register or join the memberships allowed to view and see all the replies!</p>',
 
   'ACP_DISPLAYONLYFIRSTPOST_GROUPS_IDS'     => 'Users Groups IDS (intended as the user\'s default group) that will see only the first post',
   'ACP_DISPLAYONLYFIRSTPOST_FORUMS_IDS'     => 'Forums IDS that will shown only the first post to the selected groups.<br />If you wish to select all the forums in once, set the word <i style="color:red"><b>all</b></i> as value here, so that this rule will affect all the existent forums',
