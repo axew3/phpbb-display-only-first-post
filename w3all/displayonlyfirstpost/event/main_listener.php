@@ -109,7 +109,7 @@ class main_listener implements EventSubscriberInterface
       if(!empty($tempRW)){
         $e['rowset'] = $tempRW;
       }
-        unset($v,$tempRW);
+        unset($tempRW);
 
        }
       }
