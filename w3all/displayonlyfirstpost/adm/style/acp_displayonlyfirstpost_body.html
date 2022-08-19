@@ -19,18 +19,18 @@
     <legend>{{ lang('SETTINGS') }}</legend>
     <dl>
       <dt><label>{{ lang('ACP_DISPLAYONLYFIRSTPOST_GROUPS_IDS') ~ lang('COLON') }}</label></dt>
-      <dd><label><input type="text" name="w3all_displayonlyfirstpost_u_groups" value="{W3ALL_DISPLAYONLYFIRSTPOST_U_GROUPS}"  />{{ lang('DISPLAYONLYFIRSTPOST_SEP_BYCOMMA') }}</label>
+      <dd><label><input type="text" name="w3all_displayonlyfirstpost_u_groups" value="{W3ALL_DISPLAYONLYFIRSTPOST_U_GROUPS}"  /></label>
     </dl>
 
     <dl>
       <dt><label>{{ lang('ACP_DISPLAYONLYFIRSTPOST_FORUMS_IDS') ~ lang('COLON') }}</label></dt>
-      <dd><label><input type="text" name="w3all_displayonlyfirstpost_forums_ids" value="{W3ALL_DISPLAYONLYFIRSTPOST_FORUMS_IDS}" />{{ lang('DISPLAYONLYFIRSTPOST_SEP_BYCOMMA') }}</label>
+      <dd><label><input type="text" name="w3all_displayonlyfirstpost_forums_ids" value="{W3ALL_DISPLAYONLYFIRSTPOST_FORUMS_IDS}" /></label>
     </dl>
 
     <dl>
       <dt><label>{{ lang('ACP_DISPLAYONLYFIRSTPOST_REP_MODE') ~ lang('COLON') }}</label></dt>
-      <dd><label><input type="radio" class="radio" name="w3all_displayonlyfirstpost_rep_mode" value="1"{% if W3ALL_DISPLAYONLYFIRSTPOST_REP_MODE %} checked="checked"{% endif %} /> {{ lang('DISPLAYONLYFIRSTPOST_REP_MODE_HIDE_POST') }}</label>
-        <label><input type="radio" class="radio" name="w3all_displayonlyfirstpost_rep_mode" value="0"{% if not W3ALL_DISPLAYONLYFIRSTPOST_REP_MODE %} checked="checked"{% endif %} /> {{ lang('DISPLAYONLYFIRSTPOST_REP_MODE_REPLACE') }}</label></dd>
+      <dd><label><input type="radio" class="radio" name="w3all_displayonlyfirstpost_rep_mode" value="1"{% if W3ALL_DISPLAYONLYFIRSTPOST_REP_MODE %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+        <label><input type="radio" class="radio" name="w3all_displayonlyfirstpost_rep_mode" value="0"{% if not W3ALL_DISPLAYONLYFIRSTPOST_REP_MODE %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
     </dl>
 
   </fieldset>
