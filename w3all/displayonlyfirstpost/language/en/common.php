@@ -36,18 +36,19 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, [
 
-  'DISPLAYONLYFIRSTPOST_REP_MODE_HIDE_POST'   => 'Hide the entire post content',
-  'DISPLAYONLYFIRSTPOST_REP_MODE_REPLACE'   => 'Replace the post text with custom content',
-  'DISPLAYONLYFIRSTPOST_SEP_BYCOMMA'    => ' &nbsp;if more than one, separate by comma',
+  //'DISPLAYONLYFIRSTPOST_REP_MODE_HIDE_POST'   => 'Hide the entire post content',
+  //'DISPLAYONLYFIRSTPOST_REP_MODE_REPLACE'   => 'Replace the post text with custom content',
+  //'DISPLAYONLYFIRSTPOST_SEP_BYCOMMA'    => ' &nbsp;if more than one, separate by comma',
 
   //'DISPLAYONLYFIRSTPOST_EVENT'    => ' :: Displayonlyfirstpost Event :: ',
 
-  'DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT'   => '<p class="error">You can only view the first post into this topic.<br />Please register or join the memberships allowed to view and see all the replies!</p>',
+  'DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT'   => '<p class="error">You can only view the first post into this topic.<br />Please register or join the memberships allowed to view all the replies!</p>',
 
-  'ACP_DISPLAYONLYFIRSTPOST_GROUPS_IDS'     => 'Users Groups IDS (intended as the user\'s default group) that will see only the first post',
-  'ACP_DISPLAYONLYFIRSTPOST_FORUMS_IDS'     => 'Forums IDS that will shown only the first post to the selected groups.<br />If you wish to select all the forums in once, set the word <i style="color:red"><b>all</b></i> as value here, so that this rule will affect all the existent forums',
-  'ACP_DISPLAYONLYFIRSTPOST_REP_MODE'     => 'Hide the post content or replace the post text',
+  'ACP_DISPLAYONLYFIRSTPOST_GROUPS_IDS'     => 'Users Groups IDs that will see only the first post (separate by comma if more than one)',
+  'ACP_DISPLAYONLYFIRSTPOST_FORUMS_IDS'     => 'ForumIDs of forums in which only the topic start post can be read.<br />If you wish to show only the first post in all forums at once, enter the word <i style="color:red"><b>all</b></i> as value',
+  'ACP_DISPLAYONLYFIRSTPOST_REP_MODE'     => 'Append custom content to the post text',
   'ACP_DISPLAYONLYFIRSTPOST_SETTING_SAVED'  => 'Settings have been saved successfully!',
-  'ACP_DISPLAYONLYFIRSTPOST_NOTES'  => 'Note that the extension is not active until both Users Groups and Forums (IDS) fields are not set<br />To change the text and html output for the <i style="font-size:85%">Replace the post text with custom content</i> option, see the file<br /><i style="font-size:85%">/ext/w3all/displayonlyfirstpost/language/_YourActiveLanguage_/<b>common.php</b></i>',
+  //'ACP_DISPLAYONLYFIRSTPOST_NOTES'  => 'Note that the extension is not active until both Users Groups and Forums (IDS) fields are not set<br />To change the text and html output for the <i style="font-size:85%">Replace the post text with custom content</i> option, see the file<br /><i style="font-size:85%">/ext/w3all/displayonlyfirstpost/language/_YourActiveLanguage_/<b>common.php</b></i>',
+  'ACP_DISPLAYONLYFIRSTPOST_NOTES'  => 'Note that the extension is not active until both Users Groups and Forums (IDS) fields are not set<br />To change the text and html output for the <i style="font-size:85%">text prepended into the first post</i>, see the file<br /><i style="font-size:85%">/ext/w3all/displayonlyfirstpost/language/_YourActiveLanguage_/<b>common.php</b></i>',
 
 ]);
