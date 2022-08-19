@@ -17,7 +17,7 @@ Look into file
    
 then change this line
 
-     'DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT'   => '<b>Please register to see this content!</b>',
+     'DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT'   => '<p class="error">You can only view the first post into this topic.<br />Please register or join the memberships allowed to view all the replies!</p>',
 
 
 ## License
