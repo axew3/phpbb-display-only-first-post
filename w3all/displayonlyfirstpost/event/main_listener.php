@@ -54,7 +54,7 @@ class main_listener implements EventSubscriberInterface
    */
   public function load_language_on_setup($e)
   {
-  	
+
     $this->gid = $e['user_data']['group_id'];
     $this->uid = $e['user_data']['user_id'];
     $this->user_type = $e['user_data']['user_type'];
@@ -83,25 +83,32 @@ class main_listener implements EventSubscriberInterface
        if ( $this->user_type == 1 OR in_array($this->gid, $u_groups) && in_array($e['forum_id'], $forums_ids) OR in_array($this->gid, $u_groups) && in_array('all', $forums_ids) )
        {
 
-        $vx = $e['topic_data']['topic_first_post_id'];
-        $tempRW = $e['rowset'];
+        $fpid = $e['topic_data']['topic_first_post_id'];
+        //$tempRW = $e['rowset'];
 
-      // Replacement mode:
-      // $this->config['w3all_displayonlyfirstpost_rep_mode'] == 1 (Hide the entire post content)
-      // $this->config['w3all_displayonlyfirstpost_rep_mode'] == 0 (Replace the post text with custom content)
-
-        foreach($tempRW as $r => &$v){ // set as hidden (or replace the post content) all posts except the first
-         if($r != $vx){
-          if( $this->config['w3all_displayonlyfirstpost_rep_mode'] > 0 )
-          {
-           $v['hide_post'] = 1;
-          } else {
-            $v['post_text'] = $this->language->lang('DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT');
-           }
-         }
+        if( !in_array($fpid, $e['post_list']) ) // * the requested posts ids array do not contain the topic's first_post_id : then redirect to the topic first page, and show only the first post at next request
+        {
+          global $phpbb_root_path,$phpEx; // may should be added before and not declared as globals here?
+          // * here we go
+          redirect(append_sid("{$phpbb_root_path}viewtopic.$phpEx?t=".$e['topic_id']));
         }
 
+
+        $tempRW[$fpid] = $e['rowset'][$fpid];
+        /*foreach($tempRW as $r => &$v){ // remove all posts except the first
+         if($r != $fpid){
+          unset($tempRW[$r]);
+         }
+        }*/
+
+       if( $this->config['w3all_displayonlyfirstpost_rep_mode'] > 0 )
+       {
+        $tempRW[$fpid]['post_text'] = $this->language->lang('DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT') . $tempRW[$fpid]['post_text'];
+       }
+
+      if(!empty($tempRW)){
         $e['rowset'] = $tempRW;
+      }
         unset($v,$tempRW);
 
        }
