@@ -85,7 +85,7 @@ class acp_controller
           $errors[] = $this->language->lang('FORM_INVALID');
         }
 
-        if ( preg_match('/[^(\ball\b),0-9]/i',$this->request->variable('w3all_displayonlyfirstpost_forums_ids', '')) ){
+        if ( preg_match('/[^,0-9a{1}l{2}]/i',$this->request->variable('w3all_displayonlyfirstpost_forums_ids', '')) ){
           $errors[] = $this->language->lang('FORM_INVALID');
         }
 
@@ -97,6 +97,7 @@ class acp_controller
         $this->config->set('w3all_displayonlyfirstpost_u_groups', $this->request->variable('w3all_displayonlyfirstpost_u_groups', ''));
         $this->config->set('w3all_displayonlyfirstpost_forums_ids', $this->request->variable('w3all_displayonlyfirstpost_forums_ids', ''));
         $this->config->set('w3all_displayonlyfirstpost_rep_mode', $this->request->variable('w3all_displayonlyfirstpost_rep_mode', 0));
+        $this->config->set('w3all_displayonlyfirstpost_rep_content', $this->request->variable('w3all_displayonlyfirstpost_rep_content', ''));
 
         // Add option settings change action to the admin log
         $this->log->add('admin', $this->user->data['user_id'], $this->user->ip, 'LOG_ACP_DISPLAYONLYFIRSTPOST_SETTINGS');
@@ -119,6 +120,7 @@ class acp_controller
       'W3ALL_DISPLAYONLYFIRSTPOST_U_GROUPS' => $this->config['w3all_displayonlyfirstpost_u_groups'],
       'W3ALL_DISPLAYONLYFIRSTPOST_FORUMS_IDS' => $this->config['w3all_displayonlyfirstpost_forums_ids'],
       'W3ALL_DISPLAYONLYFIRSTPOST_REP_MODE' => $this->config['w3all_displayonlyfirstpost_rep_mode'],
+      'W3ALL_DISPLAYONLYFIRSTPOST_REP_CONTENT' => $this->config['w3all_displayonlyfirstpost_rep_content'],
     ]);
   }
 
