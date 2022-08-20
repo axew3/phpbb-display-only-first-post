@@ -32,6 +32,11 @@
       <dd><label><input type="radio" class="radio" name="w3all_displayonlyfirstpost_rep_mode" value="1"{% if W3ALL_DISPLAYONLYFIRSTPOST_REP_MODE %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
         <label><input type="radio" class="radio" name="w3all_displayonlyfirstpost_rep_mode" value="0"{% if not W3ALL_DISPLAYONLYFIRSTPOST_REP_MODE %} checked="checked"{% endif %} /> {{ lang('NO') }}</label></dd>
     </dl>
+    
+    <dl>
+      <dt><label>{{ lang('ACP_DISPLAYONLYFIRSTPOST_REP_CONTENT') ~ lang('COLON') }}</label></dt>
+      <dd><label><textarea name="w3all_displayonlyfirstpost_rep_content" rows="5" cols="45">{W3ALL_DISPLAYONLYFIRSTPOST_REP_CONTENT}</textarea></label></dd>
+    </dl>    
 
   </fieldset>
 
