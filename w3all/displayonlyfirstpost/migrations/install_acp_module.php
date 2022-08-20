@@ -28,6 +28,7 @@ class install_acp_module extends \phpbb\db\migration\migration
 			['config.add', ['w3all_displayonlyfirstpost_u_groups', '']],
 		  ['config.add', ['w3all_displayonlyfirstpost_forums_ids', '']],
 		  ['config.add', ['w3all_displayonlyfirstpost_mode', 1]],
+		  ['config.add', ['w3all_displayonlyfirstpost_content', '']],		  
 
 			['module.add', [
 				'acp',
