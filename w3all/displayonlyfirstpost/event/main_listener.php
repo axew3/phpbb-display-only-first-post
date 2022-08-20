@@ -93,17 +93,16 @@ class main_listener implements EventSubscriberInterface
           redirect(append_sid("{$phpbb_root_path}viewtopic.$phpEx?t=".$e['topic_id']));
         }
 
-
         $tempRW[$fpid] = $e['rowset'][$fpid];
-        /*foreach($tempRW as $r => &$v){ // remove all posts except the first
-         if($r != $fpid){
-          unset($tempRW[$r]);
-         }
-        }*/
 
        if( $this->config['w3all_displayonlyfirstpost_rep_mode'] > 0 )
        {
-        $tempRW[$fpid]['post_text'] = $this->language->lang('DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT') . $tempRW[$fpid]['post_text'];
+        if( !empty($this->config['w3all_displayonlyfirstpost_rep_content']) )
+        {
+         $tempRW[$fpid]['post_text'] = html_entity_decode($this->config['w3all_displayonlyfirstpost_rep_content'], ENT_SUBSTITUTE) . $tempRW[$fpid]['post_text'];
+        } else {
+            $tempRW[$fpid]['post_text'] = $this->language->lang('DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT') . $tempRW[$fpid]['post_text'];
+          }
        }
 
       if(!empty($tempRW)){
