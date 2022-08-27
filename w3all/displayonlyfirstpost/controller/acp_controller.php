@@ -85,7 +85,7 @@ class acp_controller
           $errors[] = $this->language->lang('FORM_INVALID');
         }
 
-        if ( preg_match('/[^,0-9a{1}l{2}]/i',$this->request->variable('w3all_displayonlyfirstpost_forums_ids', '')) ){
+        if ( preg_match('/[^\ball\b|,|0-9]+/',$this->request->variable('w3all_displayonlyfirstpost_forums_ids', '')) ){
           $errors[] = $this->language->lang('FORM_INVALID');
         }
 
