@@ -7,7 +7,7 @@ Copy the extension into
 
 Go to "ACP" > "Customise" > "Extensions" and enable the "Display Only First Post" extension.
 
-Set Groups, Forums IDS and Costom Content options into related extension ACP settings page. 
+Set Groups, Forums IDS and Custom Content options into related extension ACP settings page. 
 
 ## License
 
