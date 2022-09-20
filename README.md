@@ -1,13 +1,14 @@
 # Display Only First Post
+Display Only the First Post to specified groups, and optionally append a custom content to the post text 
 
 ## Installation
 
 Copy the extension into 
 #### phpBB/ext/w3all/displayonlyfirstpost
 
-Go to "ACP" > "Customise" > "Extensions" and enable the "Display Only First Post" extension.
+Go to "ACP" > "Customise" > "Extensions" and enable the "Display Only First Post" extension
 
-Set Groups, Forums IDS and Custom Content options into related extension ACP settings page. 
+Set Groups, Forums IDS and Custom Content options into related extension ACP settings page
 
 ## License
 
