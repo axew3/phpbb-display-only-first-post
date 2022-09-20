@@ -12,4 +12,5 @@ Set Groups, Forums IDS and Costom Content options into related extension ACP set
 ## License
 
 [GNU General Public License v2](license.txt)
+
 Donate: https://www.paypal.com/paypalme/alessionanni/
