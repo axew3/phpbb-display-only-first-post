@@ -16,7 +16,7 @@ namespace w3all\displayonlyfirstpost\controller;
 class acp_controller
 {
   /** @var \phpbb\config\config */
-  protected $config;
+  //protected $config;
   protected $config_text;
 
   /** @var \phpbb\language\language */
