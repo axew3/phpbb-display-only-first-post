@@ -1,5 +1,5 @@
 # Display Only First Post
-Display Only the First Post to specified groups, into specified forums, and optionally append a custom content to the post
+Display Only the First Post to specified groups, into specified forums, and optionally append a custom (HTML) content to the post
 
 ## Installation
 
