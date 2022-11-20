@@ -43,7 +43,6 @@ class main_listener implements EventSubscriberInterface
     $this->language = $language;
     $this->gid = $this->uid = 1; // guests, anonymous
     $this->user_type = 0; // 1 == deactivated in phpBB
-    //$this->user = $user;
   }
 
   /**
@@ -95,14 +94,14 @@ class main_listener implements EventSubscriberInterface
 
         if( $dbd['rep_mode'] > 0 )
         { // if 'Prepend custom content to the post text' option is set to yes
-         $parse_flags = ($tempRW[$fpid]['bbcode_bitfield'] ? OPTION_FLAG_BBCODE : 0) | OPTION_FLAG_SMILIES;
-         if( !empty($dbd['rep_content']) )
-         {
-          // parse the message to display and append the custom content
-          $tempRW[$fpid]['post_text'] = html_entity_decode($dbd['rep_content']) . generate_text_for_display($tempRW[$fpid]['post_text'], $tempRW[$fpid]['bbcode_uid'], $tempRW[$fpid]['bbcode_bitfield'], $parse_flags, true);
-         } else { // parse the message to display and append the default text
-            $tempRW[$fpid]['post_text'] = $this->language->lang('DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT') . generate_text_for_display($tempRW[$fpid]['post_text'], $tempRW[$fpid]['bbcode_uid'], $tempRW[$fpid]['bbcode_bitfield'], $parse_flags, true);
-           }
+          $parse_flags = ($tempRW[$fpid]['bbcode_bitfield'] ? OPTION_FLAG_BBCODE : 0) | OPTION_FLAG_SMILIES;
+           //$uid = ''; $bitfield = $tempRW[$fpid]['bbcode_bitfield'];
+           //$allow_bbcode = $allow_smilies = $allow_urls = true;
+           //$parse_flags = (($allow_bbcode) ? OPTION_FLAG_BBCODE : 0) + (($allow_smilies) ? OPTION_FLAG_SMILIES : 0) + (($allow_urls) ? OPTION_FLAG_LINKS : 0);
+
+          if( !empty($dbd['rep_content']) ){
+           $tempRW[$fpid]['post_text'] = generate_text_for_display( $dbd['rep_content'] , $tempRW[$fpid]['bbcode_uid'], $tempRW[$fpid]['bbcode_bitfield'], $parse_flags, true) . generate_text_for_display($tempRW[$fpid]['post_text'], $tempRW[$fpid]['bbcode_uid'], $tempRW[$fpid]['bbcode_bitfield'], $parse_flags, true);
+         }
         }
 
         if(!empty($tempRW)){
