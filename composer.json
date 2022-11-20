@@ -1,7 +1,7 @@
 {
     "name": "w3all/displayonlyfirstpost",
     "type": "phpbb-extension",
-    "description": "Display Only the First Post to specified groups and optionally prepend custom (HTML) content into the post",
+    "description": "Display Only the First Post to specified groups and optionally prepend custom content into the post",
     "homepage": "https://github.com/axew3/phpbb-display-only-first-post",
     "version": "1.0.4",
     "time": "2022-11-13",
