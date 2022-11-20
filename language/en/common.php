@@ -35,14 +35,10 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, [
-
-  'DISPLAYONLYFIRSTPOST_EVENT_REPLACEMENT_TEXT'   => '<h2><p class="error">You can only view the first post of this topic.<br />Please register or join the memberships allowed to view all the replies!</p></h2>',
-
   'ACP_DISPLAYONLYFIRSTPOST_GROUPS_IDS'     => 'Users GroupIDs (use comma as separator) that will see only the first post',
   'ACP_DISPLAYONLYFIRSTPOST_FORUMS_IDS'     => 'ForumIDs (use comma as separator) of forums in which only the topic start post can be read.<br />If you wish to show only the first post in all forums at once, enter the word <i style="color:red"><b>all</b></i> as value',
   'ACP_DISPLAYONLYFIRSTPOST_REP_MODE'       => 'Prepend custom content to the post text',
-  'ACP_DISPLAYONLYFIRSTPOST_REP_CONTENT'    => 'Custom content that will be prepended to the post text. HTML/Javascript can be used. Double check that the markup you enter is correct.<br />If left blank, the default phrase will be used',
+  'ACP_DISPLAYONLYFIRSTPOST_REP_CONTENT'    => 'Custom content that will be prepended to the post text. BBCode can be used',
   'ACP_DISPLAYONLYFIRSTPOST_SETTING_SAVED'  => 'Settings have been saved successfully!',
   'ACP_DISPLAYONLYFIRSTPOST_NOTES' => 'Note that the extension will be inactive if no Usergroup(s) and Forum(s) have been declared',
-
-]);
+ ]);
