@@ -6,7 +6,7 @@ Display Only the First Post to specified groups, into specified forums, and opti
 ## Installation
 
 Copy the extension into 
-#### phpBB/ext/w3all/displayonlyfirstpost
+### phpBB/ext/w3all/displayonlyfirstpost
 
 Go to "ACP" > "Customise" > "Extensions" and enable the "Display Only First Post" extension.
 
