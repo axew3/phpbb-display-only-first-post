@@ -55,13 +55,11 @@ class acp_controller
    */
   public function display_options()
   {
-    // Add our common language file
     $this->language->add_lang('common', 'w3all/displayonlyfirstpost');
 
     // Create a form key for preventing CSRF attacks
     add_form_key('w3all_displayonlyfirstpost_acp');
 
-    // Create an array to collect errors that will be output to the user
     $errors = [];
 
     // Is the form being submitted to us?
@@ -88,27 +86,28 @@ class acp_controller
           $errors[] = $this->language->lang('FORM_INVALID');
         }
 
-      // If no errors, process the form data
       if (empty($errors))
       {
         // Set the options the user configured
+        if(!empty($POST_data['rep_content']))
+        {
         $POST_data['rep_content'] = str_replace(chr(0), '', $POST_data['rep_content']);
+        $uid = $bitfield = $options = ''; // do not affect
+        $allow_bbcode = $allow_urls = $allow_smilies = true; // do not affect
+        generate_text_for_storage($POST_data['rep_content'], $uid, $bitfield, $options, $allow_bbcode, $allow_urls, $allow_smilies);
+      }
         $POST_data = json_encode($POST_data,  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK | JSON_INVALID_UTF8_SUBSTITUTE);
 
          $this->config_text->set('w3all_displayonlyfirstpost', $POST_data);
+         $this->log->add('admin', $this->user->data['user_id'], $this->user->ip, 'LOG_ACP_DISPLAYONLYFIRSTPOST_SETTINGS');
 
-        // Add option settings change action to the admin log
-        $this->log->add('admin', $this->user->data['user_id'], $this->user->ip, 'LOG_ACP_DISPLAYONLYFIRSTPOST_SETTINGS');
-
-        // Option settings have been updated and logged
-        // Confirm this to the user and provide link back to previous page
         trigger_error($this->language->lang('ACP_DISPLAYONLYFIRSTPOST_SETTING_SAVED') . adm_back_link($this->u_action));
       }
     }
 
     $s_errors = !empty($errors);
 
-    $dbd = $this->config_text->get('w3all_displayonlyfirstpost');
+     $dbd = $this->config_text->get('w3all_displayonlyfirstpost');
 
     if(empty($dbd)){
      $dbd = array();
@@ -117,7 +116,17 @@ class acp_controller
      $dbd = json_decode($dbd, true);
     }
 
-    // Set output variables for display in the template
+  $uid = $bitfield = '';
+  $allow_bbcode = $allow_smilies = $allow_urls = true;
+  $flags = (($allow_bbcode) ? OPTION_FLAG_BBCODE : 0) + (($allow_smilies) ? OPTION_FLAG_SMILIES : 0) + (($allow_urls) ? OPTION_FLAG_LINKS : 0);
+
+    if(!empty($dbd['rep_content'])){
+     $rep_content = generate_text_for_edit($dbd['rep_content'], '', $flags);
+     $rep_content = $rep_content['text'];
+    } else {
+      $rep_content = '';
+    }
+
     $this->template->assign_vars([
       'S_ERROR' => $s_errors,
       'ERROR_MSG' => $s_errors ? implode('<br />', $errors) : '',
@@ -127,7 +136,7 @@ class acp_controller
       'W3ALL_DISPLAYONLYFIRSTPOST_U_GROUPS' => $dbd['u_groups'],
       'W3ALL_DISPLAYONLYFIRSTPOST_FORUMS_IDS' => $dbd['forums_ids'],
       'W3ALL_DISPLAYONLYFIRSTPOST_REP_MODE' => $dbd['rep_mode'],
-      'W3ALL_DISPLAYONLYFIRSTPOST_REP_CONTENT' => $dbd['rep_content'],
+      'W3ALL_DISPLAYONLYFIRSTPOST_REP_CONTENT' => $rep_content,
     ]);
   }
 
