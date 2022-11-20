@@ -1,7 +1,7 @@
 # Display Only First Post
 Display Only the First Post to specified groups, into specified forums, and optionally append a custom (also BBcode) content to the post
 
-If you like to prepend custom HTML content, download the 1.0.4 version instead: https://github.com/axew3/phpbb-display-only-first-post/releases
+##### If you like to prepend custom HTML content, download the 1.0.4 version instead: https://github.com/axew3/phpbb-display-only-first-post/releases
 
 ## Installation
 
